@@ -1,10 +1,12 @@
 package com.example;
 
 public class Cliente {
+    private String nome;
     private double renda;
     private char sexo;
     private int anoNascimento;
     private boolean especial;
+    private String cpf;
 
     public Cliente() {
      System.out.println("Criando um  cliente");  
@@ -19,6 +21,18 @@ public class Cliente {
         System.out.println("Criando um  cliente com parâmetros"); 
         setRenda(renda);
         setSexo(sexo);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        if(nome.isBlank()) {
+            System.out.println("O nome é obrigatório");
+        } else {
+            this.nome = nome.toUpperCase().trim();
+        }
     }
 
     public double getRenda() {
@@ -60,4 +74,12 @@ public class Cliente {
     public void setEspecial(boolean especial) {
         this.especial = especial;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }    
 }
