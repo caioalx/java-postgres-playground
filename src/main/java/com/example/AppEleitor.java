@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import com.example.model.Cidadao;
+
 public class AppEleitor {
     
     public static void main(String[] args) {

@@ -2,6 +2,8 @@ package com.example;
 
 import java.util.Arrays;
 
+import com.example.model.Cliente;
+
 public class AppClasses {
     
     public static void main(String[] args) {
