@@ -3,6 +3,9 @@ package com.example.dao;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
+
+import com.example.empresaFinanceira.model.Transacao;
 
 public class DAO {
     protected Connection conn;
@@ -11,7 +14,7 @@ public class DAO {
         this.conn = conn;
     }
 
-    public void listar(String tabela) {
+    public List<Transacao> listar(String tabela) {
         String sql = "select * from " + tabela;
 
         try {
