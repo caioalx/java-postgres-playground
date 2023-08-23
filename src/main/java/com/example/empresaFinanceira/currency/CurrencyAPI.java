@@ -1,4 +1,4 @@
-package com.example.empresaFinanceira;
+package com.example.empresaFinanceira.currency;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -11,9 +11,9 @@ public class CurrencyAPI {
             new Currency("BRL", "EUR", 0.18));
 
     public static double getQuote(String from, String to) {
-        for(Currency currencyAPI : currencyList) {
-            if(currencyAPI.getFrom().equals(from) && currencyAPI.getTo().equals(to)) {
-                return currencyAPI.getQuote();
+        for(var currency : currencyList) {
+            if(currency.getFrom().equals(from) && currency.getTo().equals(to)) {
+                return currency.getQuote();
             }
         }
 

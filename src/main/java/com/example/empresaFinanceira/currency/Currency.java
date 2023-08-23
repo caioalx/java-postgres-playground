@@ -1,4 +1,4 @@
-package com.example.empresaFinanceira;
+package com.example.empresaFinanceira.currency;
 
 public class Currency {
     private String from;

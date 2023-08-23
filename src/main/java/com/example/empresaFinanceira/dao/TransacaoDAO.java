@@ -14,12 +14,12 @@ public class TransacaoDAO extends DAO {
         super(conn);
     }
 
-    public List<Transacao> listar(String cliente) {
+    public List<Transacao> listarTransacoes(String cliente) {
         if(cliente == null) {
             throw new IllegalArgumentException("O cliente é obrigatório");
         }
         String sql = "select * from transacao where louwer(cliente) like ? ";
-        List<Transacao> transacoes = new LinkedList<>();
+        List<Transacao> transacoes = new LinkedList<Transacao>();
         try{
             var statement = conn.prepareStatement(sql);
             statement.setString(1, cliente.toLowerCase());
@@ -33,10 +33,10 @@ public class TransacaoDAO extends DAO {
                 transacao.setId(result.getInt("id"));
                 transacoes.add(transacao);
             }
+            return transacoes;
         } catch(SQLException e) {
             throw new RuntimeException("Não foi possível obter as transações do cliente", e);
         }
 
-        return transacoes;
     }
 }

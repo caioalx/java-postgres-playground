@@ -1,4 +1,4 @@
-package com.example.empresaFinanceira;
+package com.example.empresaFinanceira.yahooFinance;
 
 public class Spark {
     private Result[] result;
