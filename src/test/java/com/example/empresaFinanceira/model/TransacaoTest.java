@@ -42,10 +42,10 @@ public class TransacaoTest {
 
     @Test
     void testAdicionarTransacoesRetiradasDiasDiferentes() {
-        var primeira = dao.adicionar(new Transacao("Caio", 100, "BRL", 'R'));
         var anteontem = LocalDateTime.now().minusDays(2);
-        primeira.setDataHora(anteontem);
-        
+        var primeira = dao.adicionar(new Transacao("Caio", 100, "BRL", 'R', anteontem));
+        dao.adicionar(primeira);
+
         dao.adicionar(new Transacao("Caio", 100, "BRL", 'R'));
         var ultima = dao.adicionar(new Transacao("Caio", 10, "BRL", 'R'));
         assertFalse(ultima.isSuspeita());

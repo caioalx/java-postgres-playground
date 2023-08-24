@@ -42,8 +42,9 @@ public class TransacaoDAO {
             var ontem = nova.getDataHora().minusDays(1);
             if(transacao.getCliente().equals(nova.getCliente()) 
                 && transacao.getTipo() == 'R' 
-                && transacao.getDataHora().isAfter(ontem)) {
-                    totalRetiradas++;
+                && transacao.getDataHora().isAfter(ontem)
+                && ++totalRetiradas >= 2) {
+                    break;
             }
         }
 
